@@ -163,7 +163,7 @@ resource "aws_iam_role" "test_role" {
 
 resource "aws_ssm_maintenance_window" "window" {
   name     = "maintenance-window"
-  schedule = "cron(07 10 ? * * *)"
+  schedule = "cron(07 11 ? * * *)"
   duration = 3
   cutoff   = 1
 }
