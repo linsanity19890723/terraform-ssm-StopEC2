@@ -154,10 +154,7 @@ resource "aws_iam_role" "test_role" {
     })
   }
 
-  # inline_policy {
-  #   name   = "policy-8675309"
-  #   policy = data.aws_iam_policy_document.inline_policy.json
-  # }
+
 }
 
 
@@ -187,7 +184,6 @@ resource "aws_ssm_maintenance_window_task" "task" {
   task_type   = "AUTOMATION"
   task_arn    = "AWS-StopEC2Instance"
   priority    = 1
-  # service_role_arn = "arn:aws:iam::467343721842:role/SSM-MaintenanceWindow"
   service_role_arn = aws_iam_role.test_role.arn
   max_concurrency  = "2"
   max_errors       = "1"
